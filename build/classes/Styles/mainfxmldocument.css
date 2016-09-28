@@ -1,0 +1,30 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.hyperlink{
+    -fx-padding:5;
+    -fx-font-family:'Times New Roman', Times, serif;
+    -fx-font-size:14px;
+    -fx-text-fill:rgb(0,0,0);
+    -fx-text-alignment:center;
+    -fx-border-color:rgb(256,256,256);
+}
+
+.hyperlink:active, .hyperlink:selected, .hyperlink:focus, .hyperlink:focused{
+    -fx-border-color:rgb(256,256,256);
+}
+
+.label{
+    -fx-font-weight:bold;
+    -fx-alignment:CENTER;
+    -fx-font-family:'Times New Roman', Times, serif;
+}
+
+.root{
+    -fx-background:rgb(256,256,256);
+}
+
+.separator{
+    -fx-background-color:rgb(0,0,0);
+}

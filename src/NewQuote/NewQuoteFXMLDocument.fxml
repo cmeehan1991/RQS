@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.image.*?>
+
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="NewQuote.NewQuoteFXMLDocumentController" prefWidth="875" prefHeight="775" fx:id="scrollPane">
+    <GridPane vgap="5"  hgap="5" GridPane.halignment="CENTER" >
+        <padding>
+            <Insets top="5" bottom="5" left="5" right="5"/>
+        </padding>
+        <ButtonBar GridPane.rowIndex="0" GridPane.columnIndex="1">
+            <buttons>
+                <Button text="Submit" onAction="#submitQuote"  />
+                <Button text="Cancel" />
+            </buttons>
+        </ButtonBar>
+        
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1" hgap="5" vgap="5" fx:id="customerInformation">  
+            <padding>
+                <Insets top="5" bottom="5" left="5" right="5"/>
+            </padding>
+            <Label text="Company:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <Text text="N/A" fx:id="companyName" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="3" />
+            <Button text="..." fx:id="chooseCompany" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <Label text="Contact Name:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="contactName" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Contact Email:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="contactEmail" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+            <Label text="Contact Phone:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="contactPhone" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label text="Extension:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+            <TextField fx:id="contactPhoneExtension" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="contactPhoneType" GridPane.columnIndex="4" GridPane.rowIndex="2" promptText="N/A">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Work"/>
+                        <String fx:value="Mobile"/>
+                        <String fx:value="Other"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </GridPane>
+        
+        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1" hgap="5" vgap="5" fx:id="quoteStatus">
+            <padding>
+                <Insets top="5" bottom="5" left="5" right="5"/>
+            </padding>
+            <Label text="Marine Technical" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="mtdApproval" GridPane.columnIndex="1" GridPane.rowIndex="0" promptText="">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Pending"/>
+                        <String fx:value="Approved"/>
+                        <String fx:value="Declined"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label text="Space:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <ComboBox fx:id="spaceApproval" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Pending"/>
+                        <String fx:value="Approved"/>
+                        <String fx:value="Declined"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            <Label text="Overseas:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="overseasApproval" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Pending"/>
+                        <String fx:value="Approved"/>
+                        <String fx:value="Declined"/>
+                    </FXCollections>
+                </items>
+            </ComboBox> 
+            <Label text="TLM:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <ComboBox fx:id="tlmApproval" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Pending"/>
+                        <String fx:value="Approved"/>
+                        <String fx:value="Declined"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </GridPane>
+        
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2" hgap="2" fx:id="portInformation">
+            <padding>
+                <Insets top="5" bottom="5" left="5" right="5"/>
+            </padding>
+            
+            <Label text="Trade Lane:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <ComboBox id="tradeLane" fx:id="tradeLane" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="" >
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Item 1"/>
+                    </FXCollections>
+                </items>
+            </ComboBox>
+            
+            <Label text="POL" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+            <TextField fx:id="pol" GridPane.rowIndex="0" GridPane.columnIndex="3"/>
+            <Button text="..." GridPane.rowIndex="0" GridPane.columnIndex="4"/>
+            
+            <Label text="POD" GridPane.rowIndex="0" GridPane.columnIndex="5"/>
+            <TextField fx:id="pod" GridPane.rowIndex="0" GridPane.columnIndex="6"/>
+            <Button text="..." GridPane.rowIndex="0" GridPane.columnIndex="7"/>
+            
+            <Label text="T-Shp" GridPane.rowIndex="0" GridPane.columnIndex="8"/>
+            <TextField fx:id="tshp" GridPane.rowIndex="0" GridPane.columnIndex="9"/>
+            <Button text="..." GridPane.rowIndex="0" GridPane.columnIndex="10"/>
+            
+        </GridPane>
+        
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="3" GridPane.columnSpan="2" vgap="5" hgap="5" fx:id="commodityInformation">
+            <padding>
+                <Insets top="5" bottom="5" left="5" right="5"/>
+            </padding> 
+            
+            <Label text="Commodity Class:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="commodityClass" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Handling Instructions:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <ComboBox fx:id="handlingInstructions" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+            <CheckBox text="Accessories" fx:id="accessories" GridPane.columnIndex="4" GridPane.rowIndex="0"/>
+            
+            <Label text="Commodity Description:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <TextField fx:id="commodityDescription" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.columnSpan= "4"/>
+        </GridPane>
+                
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="4" vgap="5" hgap="5" fx:id="rateInformation">
+            <padding>
+                <Insets top="5" bottom="5" left="5" right="5"/>
+            </padding>
+            <Label text="OFT:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="baseOceanFreight" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="75"/>
+            <ComboBox fx:id="oftUnit" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <CheckBox text="MAFI Minimum: $" fx:id="mafiMinimumCheckBox" GridPane.columnIndex="3" GridPane.rowIndex="0" onAction="#mafiMinInput" />
+            <TextField fx:id="mafiMinimumCharge" GridPane.columnIndex="4" GridPane.rowIndex="0" editable="false" visible="false" />
+            
+            <Label text="BAF: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="baf" GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="75"/>
+            <ComboBox fx:id="bafUnit" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <GridPane GridPane.columnIndex="3" GridPane.rowIndex="1" hgap="5">
+                <CheckBox text="Inclusive" fx:id="bafIncluded" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <CheckBox text="per Tariff" fx:id="bafPerTariff" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            </GridPane>
+            
+            
+            <Label text="ECA:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="eca" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="75"/>
+            <ComboBox fx:id="ecaUnit" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <GridPane GridPane.columnIndex="3" GridPane.rowIndex="2" hgap="5">
+                <CheckBox text="Inclusive" fx:id="ecaIncluded" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <CheckBox text="per Tariff" fx:id="ecaPerTariff" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            </GridPane>
+            
+            <Label text="THC:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+            <TextField fx:id="thc" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="75"/>
+            <ComboBox fx:id="thcUnit" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <GridPane GridPane.columnIndex="3" GridPane.rowIndex="3" hgap="5" >
+                <CheckBox text="Inclusive" fx:id="thcIncluded" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#thcInput"/>
+                <CheckBox text="per Tariff" fx:id="thcPerTariff" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#thcInput"/>
+                <CheckBox text="FAS" fx:id="thcFAS" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#thcInput"/>
+            </GridPane>
+            
+            <Label text="WFG:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+            <TextField fx:id="wfg" GridPane.columnIndex="1" GridPane.rowIndex="4" maxWidth="75"/>
+            <ComboBox fx:id="wfgUnit" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <GridPane GridPane.columnIndex="3" GridPane.rowIndex="4" hgap="5" >
+                <CheckBox text="Inclusive" fx:id="wfgIncluded" GridPane.columnIndex="0" GridPane.rowIndex="0" onAction="#wfgInput" />
+                <CheckBox text="per Tariff" fx:id="wfgPerTariff" GridPane.columnIndex="1" GridPane.rowIndex="0" onAction="#wfgInput"/>
+                <CheckBox text="FAS" fx:id="wfgFAS" GridPane.columnIndex="2" GridPane.rowIndex="0" onAction="#wfgInput"/>
+            </GridPane>
+            
+            <Label text="Doc:" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+            <TextField fx:id="docFee" GridPane.columnIndex="1" GridPane.rowIndex="5" maxWidth="75"/>
+            <ComboBox fx:id="docUnit" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <CheckBox text="Inclusive" fx:id="docIncluded" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+        
+            <RadioButton text="Israel War Risk" fx:id="israelWarRisk" GridPane.columnIndex="0" GridPane.columnSpan="2"  GridPane.rowIndex="6"/>
+        </GridPane>
+        
+        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4" vgap="5" hgap="5" fx:id="rateType">
+            <padding>
+                <Insets top="5" bottom="5" left="5" right="5"/>
+            </padding>
+            <RadioButton text="Tariff" GridPane.columnIndex="0" GridPane.rowIndex="0" fx:id="tariffRate">            
+                <toggleGroup>
+                    <ToggleGroup fx:id="rateTypeToggleGroup"/>
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton text="Spot" GridPane.columnIndex="1" GridPane.rowIndex="0" fx:id="spotRate" toggleGroup="$rateTypeToggleGroup"/>
+            <RadioButton text="Contract" GridPane.columnIndex="0" GridPane.rowIndex="1" fx:id="contractRate" toggleGroup="$rateTypeToggleGroup"/>
+            <RadioButton text="Indicatory" GridPane.columnIndex="1" GridPane.rowIndex="1" fx:id="indicatoryRate" toggleGroup="$rateTypeToggleGroup"/>
+            <RadioButton text="Foreign to Foreign" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.columnSpan="2" fx:id="ftfRate" toggleGroup="$rateTypeToggleGroup"/>
+            <RadioButton text="Booking" GridPane.columnIndex="0" GridPane.rowIndex="3" fx:id="booked"/>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="3" fx:id="bookingNumber"/>
+            <RadioButton text="Decline" GridPane.columnIndex="0" GridPane.rowIndex="4" fx:id="declined"/>
+            <ComboBox GridPane.columnIndex="1" GridPane.rowIndex="4" fx:id="declinedReason"/>
+        </GridPane>
+        
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.columnSpan="2" vgap="5" hgap="5" fx:id="packingListSection">
+            <TableView fx:id="packingList" GridPane.rowIndex="0" GridPane.columnIndex="0" prefHeight="100">
+                <columns>
+                    <TableColumn text="Commodity"/>
+                    <TableColumn text="Quantity"/>
+                    <TableColumn text="Length"/>
+                    <TableColumn text="Width"/>
+                    <TableColumn text="Height"/>
+                    <TableColumn text="Kgs"/>
+                    <TableColumn text="Cubic Meters"/>
+                </columns>
+            </TableView>
+            <ToolBar orientation="VERTICAL" GridPane.rowIndex="0" GridPane.columnIndex="1"> 
+                <Button fx:id="addRowButton">
+                    <graphic>
+                        <ImageView>
+                            <Image url="Images/add_row_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="removeRowButton">
+                    <graphic>
+                        <ImageView>
+                            <Image url="Images/Minus-icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="calculateCBMButton">
+                    <graphic>
+                        <ImageView>
+                            <Image url="Images/math_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button fx:id="uploadPLButton">
+                    <graphic>
+                        <ImageView>
+                            <Image url="Images/upload_icon.png"/>
+                        </ImageView>
+                    </graphic>
+                </Button>
+            </ToolBar>
+        </GridPane>
+        
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="6" vgap="5" hgap="5" GridPane.columnSpan="2" fx:id="comments">
+            <Label text="Internal Remarks" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.halignment="CENTER"/> 
+            <Label text="External Remarks" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.halignment="CENTER"/> 
+            <TextArea fx:id="internalComments" GridPane.columnIndex="0" GridPane.rowIndex="1" maxHeight="100" maxWidth="400"/>
+            <TextArea fx:id="externalComments" GridPane.columnIndex="1" GridPane.rowIndex="1" maxHeight="100" maxWidth="400"/>
+        </GridPane>
+        
+    </GridPane>
+
+</ScrollPane>

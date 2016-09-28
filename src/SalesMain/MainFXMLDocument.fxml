@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane prefHeight="200" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SalesMain.MainFXMLDocumentController" vgap="5" GridPane.halignment="CENTER" >
+    <padding><Insets top="10" bottom="10" left="25" right="25"/></padding>
+    <Label text="KAM cmeehan" fx:id="username" id="userInfo" GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.halignment="CENTER" />
+    
+    <Separator GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    
+    <Label text="User Center" GridPane.columnIndex="0" GridPane.rowIndex="2" GridPane.halignment="CENTER" />
+    <Hyperlink text="User Information" GridPane.columnIndex="0" GridPane.rowIndex="3" fx:id="userInformationButton"  minWidth="150" onAction="#userInformationClick"/>
+    
+    <Separator GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    
+    <Label text="Quotes" GridPane.columnIndex="0" GridPane.rowIndex="5" GridPane.halignment="CENTER"/>
+    <Hyperlink text="New Quote" GridPane.columnIndex="0" GridPane.rowIndex="6" fx:id="newQuoteButton" onAction="#newQuote" minWidth="150"/>
+    <Hyperlink text="Update/View" GridPane.columnIndex="0" GridPane.rowIndex="7" fx:id="updateViewQuoteButton" minWidth="150"/>
+    
+     <Separator GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+     
+     <Label text="Publishing" GridPane.columnIndex="0" GridPane.rowIndex="9" GridPane.halignment="CENTER"/>
+     <Hyperlink text="Spot Rate" GridPane.columnIndex="0" GridPane.rowIndex="10" fx:id="spotRateButton" minWidth="150"/>
+     <Hyperlink text="Tariff" GridPane.columnIndex="0" GridPane.rowIndex="11" fx:id="tariffButton" minWidth="150"/>
+     <Hyperlink text="Contract" GridPane.columnIndex="0" GridPane.rowIndex="12" fx:id="contractButton" minWidth="150"/>
+    
+     <Separator GridPane.columnIndex="0" GridPane.rowIndex="13"/>
+     
+     <Label text="Query Manager" GridPane.columnIndex="0" GridPane.rowIndex="14" GridPane.halignment="CENTER"/>
+     <Hyperlink text="Search Center" GridPane.columnIndex="0" GridPane.rowIndex="15" fx:id="searchCenterButton" />
+    
+     <Separator GridPane.columnIndex="0" GridPane.rowIndex="16"/>
+     
+     <Label text="Customers" GridPane.columnIndex="0" GridPane.rowIndex="17" GridPane.halignment="CENTER"/>
+     <Hyperlink text="Customer Center" GridPane.columnIndex="0" GridPane.rowIndex="18" fx:id="customerCenterButton" />
+     
+     
+</GridPane>
